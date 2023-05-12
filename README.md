@@ -1,41 +1,35 @@
-# chemistry-analysis-tools
+**Chemistry Analysis Tools**
 
-**Charge Difference Calculator**
+A collection of Python scripts for analyzing chemistry data.
 
-This script reads the partial charges from two mol2 files representing bound and unbound structures, respectively. It then calculates the charge differences between the two structures and saves the results in a tab-delimited file. The output file contains the atom indices and their corresponding charge differences.
+**Scripts:**
 
-**Usage:**
+The following scripts are currently available in this repository:
 
-python charge_difference_calculator.py bound.mol2 unbound.mol2 -o output.txt
+mol2_formatter.py: Python script that can be used to format a MOL2 file. A MOL2 file is a common file format for describing molecules and their properties. This script reads in a MOL2 file, removes any comments, and formats the molecule information in a consistent manner. The formatted MNOL2 file is then output to a new file.
 
-bound_mol2: The filename of the mol2 file for the bound structure
-unbound_mol2: The filename of the mol2 file for the unbound structure
-output (optional): The name of the output file (default: output.dat)
+mol2_charge_diff.py: Python script that can be used to calculate the difference between two sets of charges for a molecule. The script reads in two MOL2 files that contain the same molecule, but with different sets of charges. The charges for each molecule are extracted, and the difference between the charges for each atom is calculated. The results are output to a file.
 
-**Dependencies**
-The script requires the following packages:
+mol2_partial_charge_modifer.py: Python script that can be used to modify the partial charges for a molecule. The script reads in a MOL2 file and a text file that contains the desired modifications to the charges. The modifications are specified as a list of atom indices and the corresponding partial charges. The script updates the charges in the MOL2 file according to the modifications, and outputs a new MOL2 file.
 
-_argparse_
 
---------------------------------------------------------------------------------------------------------------------------------
+**Installation:**
 
-**Mol2 Charge Modifier**
+To use these scripts, you will need to have Python installed on your computer. You can download Python from the official website: https://www.python.org/downloads/
 
-This Python script modifies charge values in Mol2 files based on a charge difference data table stored in a .dat file. The modified Mol2 files are saved in the same directory as the original files with "_modified" appended to the filename.
+After installing Python, you can clone this repository to your local machine using the following command:
+
+git clone https://github.com/username/chemistry-analysis-tools.git
 
 **Usage:**
 
-python mol2_charge_modifier.py --dat <charge_diff.dat> --mol2dir <mol2_directory>
+To run any of the scripts, simply navigate to the directory where the script is located and run it using the python command. For example:
 
---dat <charge_diff.dat>: Path to the charge difference data file in .dat format.
---mol2dir <mol2_directory>: Path to the directory containing the Mol2 files to modify.
+cd /path/to/chemistry-analysis-tools
 
-**Example usage:**
-python mol2_charge_modifier.py --dat charge_diff.dat --mol2dir Mol2_files/
+_python mol2_formatter.py_
 
-**Dependencies:**
 
-This script requires the following packages:
+**License:**
 
-_argparse_
-_os_
+This project is licensed under the MIT License - see the LICENSE file for details.
